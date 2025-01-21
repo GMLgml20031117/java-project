@@ -1,0 +1,29 @@
+
+
+#数据库连接池的配置
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/java_project
+      username: root
+      password: gml20031117
+
+#      将swagger集成到Spring Boot项目中
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+#数据库配置
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath:/mapper/*.xml
+
+#将数据库的日志信息控制级别
+logging:
+  level:
+    com.maolong.mapper: debug
+
