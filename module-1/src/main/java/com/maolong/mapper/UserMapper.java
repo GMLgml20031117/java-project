@@ -1,6 +1,7 @@
 package com.maolong.mapper;
 
-import com.maolong.entity.User;
+import com.maolong.pojo.dto.UserDTO;
+import com.maolong.pojo.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -12,5 +13,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2025-01-21
  */
 public interface UserMapper extends BaseMapper<User> {
+    User getByNameAndPasswordUser(UserDTO user);
 
 }

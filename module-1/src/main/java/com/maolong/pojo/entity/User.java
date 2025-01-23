@@ -1,4 +1,4 @@
-package com.maolong.entity;
+package com.maolong.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;

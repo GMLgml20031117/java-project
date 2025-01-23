@@ -1,6 +1,7 @@
 package com.maolong.service;
 
-import com.maolong.entity.User;
+import com.maolong.pojo.dto.UserDTO;
+import com.maolong.pojo.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -12,5 +13,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2025-01-21
  */
 public interface IUserService extends IService<User> {
+   public User login(UserDTO user);
 
 }

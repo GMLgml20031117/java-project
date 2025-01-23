@@ -1,4 +1,4 @@
-package com.maolong.util;
+package com.maolong.common.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

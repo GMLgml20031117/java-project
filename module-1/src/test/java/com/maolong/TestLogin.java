@@ -1,9 +1,9 @@
 package com.maolong;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.maolong.entity.User;
+import com.maolong.pojo.entity.User;
 import com.maolong.service.IUserService;
-import com.maolong.util.JsonObjUtil;
+import com.maolong.common.util.JsonObjUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

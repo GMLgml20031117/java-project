@@ -22,8 +22,18 @@ mybatis-plus:
       logic-not-delete-value: 0
   mapper-locations: classpath:/mapper/*.xml
 
+
 #将数据库的日志信息控制级别
 logging:
   level:
     com.maolong.mapper: debug
+
+
+
+project:
+  jwt:
+    admin-secret-key: gaomaolong
+    admin-ttl: 10800000
+    admin-token-name: token
+
 
