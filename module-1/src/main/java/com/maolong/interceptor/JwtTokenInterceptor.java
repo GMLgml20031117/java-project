@@ -17,12 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 public class JwtTokenInterceptor implements HandlerInterceptor {
     @Autowired
     JwtProperties jwtProperties;
-    @Autowired
-    private JwtUtil jwtUtil;
 
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
          //判断当前拦截到的是Controller的方法还是其他资源
          if (!(handler instanceof HandlerMethod)) {
+             log.info("当前拦截到的不是动态方法，直接放行");
              //当前拦截到的不是动态方法，直接放行
              return true;
          }
@@ -32,12 +31,14 @@ public class JwtTokenInterceptor implements HandlerInterceptor {
          if(token==null||token.isEmpty()){
              log.info("请求头没有token");
              return false;
+         }else {
+             log.info("请求令牌token:{}",token);
+             Claims claims = JwtUtil.parseJWT(jwtProperties.getAdminSecretKey(),token);
+             String username = claims.get("username").toString();
+             log.info("用户名:{}",username);
+             return true;
          }
 
-         log.info("请求令牌token:{}",token);
-         Claims claims = jwtUtil.parseJwt(jwtProperties.getAdminSecretKey(), token);
-         String username = claims.get("username").toString();
-         log.info("用户名:{}",username);
-         return true;
+
     }
 }

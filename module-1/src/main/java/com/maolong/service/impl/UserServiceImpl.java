@@ -1,6 +1,6 @@
 package com.maolong.service.impl;
 
-import com.maolong.pojo.dto.UserDTO;
+import com.maolong.pojo.dto.LoginDTO;
 import com.maolong.pojo.entity.User;
 import com.maolong.mapper.UserMapper;
 import com.maolong.service.IUserService;
@@ -23,7 +23,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private UserMapper userMapper;
 
     @Override
-    public User login(UserDTO user) {
+    public User login(LoginDTO user) {
         return userMapper.getByNameAndPasswordUser(user);
     }
 }

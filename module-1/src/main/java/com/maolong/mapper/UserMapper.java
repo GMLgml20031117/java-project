@@ -1,8 +1,9 @@
 package com.maolong.mapper;
 
-import com.maolong.pojo.dto.UserDTO;
+import com.maolong.pojo.dto.LoginDTO;
 import com.maolong.pojo.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * <p>
@@ -13,6 +14,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2025-01-21
  */
 public interface UserMapper extends BaseMapper<User> {
-    User getByNameAndPasswordUser(UserDTO user);
+    @Select("select * from user where username=#{username} and password=#{password}")
+    User getByNameAndPasswordUser(LoginDTO user);
 
 }
