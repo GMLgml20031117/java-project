@@ -7,6 +7,14 @@ package com.maolong.common.consitant;
  * 0代表失败
  */
 public class ResultConstant {
-    public static final Integer RESULT_SUCCESS=1;
-    public static final Integer RESULT_ERROR=0;
+    //返回前端的成功与否结果
+    public static final boolean RESULT_SUCCESS=true;
+    public static final boolean RESULT_ERROR=false;
+
+
+    //用户的用户名与用户id
+    public static final String USER_NAME="userName";
+    public static final String USER_ID="userId";
+
+
 }

@@ -1,9 +1,8 @@
 package com.maolong.pojo.entity;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.alibaba.druid.sql.visitor.functions.Char;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
@@ -11,6 +10,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * <p>
@@ -31,26 +31,36 @@ public class User implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    private String username;
+    private String userName;
 
-    private String phone;
+    private String userRealName;
 
-    private String sex;
+    private String userMobile;
 
-    private String address;
+    private String userSex;
 
-    private String company;
+    private String deptName;
 
-    private String email;
+    private String userEmail;
 
-    private String identify;
+    private String roleId;
+
+    private String userPassword;
+
+    private String addUser;
 
 
-    @TableField(value = "update_time",fill = FieldFill.UPDATE)
-    private LocalDateTime updateTime;
+    @TableField(fill = FieldFill.INSERT)
+    @DateTimeFormat(pattern="yy-mm-dd HH:mm:ss")
+    private LocalDateTime addTime;
 
-    private String password;
+    private String editUser;
 
-    private String name;
+
+    @DateTimeFormat(pattern="yy-mm-dd HH:mm:ss")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime editTime;
+
+    private String isLock;
 
 }

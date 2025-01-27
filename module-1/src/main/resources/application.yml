@@ -21,6 +21,10 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
   mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.maolong.pojo.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
 
 
 #将数据库的日志信息控制级别

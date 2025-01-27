@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Result<T> implements Serializable {
-    private Integer code;
+    private boolean success;
     private T data;
     private String msg;
 

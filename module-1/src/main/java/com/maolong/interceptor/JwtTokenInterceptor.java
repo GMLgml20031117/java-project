@@ -1,9 +1,12 @@
 package com.maolong.interceptor;
 
+import com.maolong.common.consitant.ResultConstant;
 import com.maolong.common.properties.JwtProperties;
+import com.maolong.common.util.BaseContext;
 import com.maolong.common.util.JwtUtil;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
@@ -30,12 +33,23 @@ public class JwtTokenInterceptor implements HandlerInterceptor {
          String token = request.getHeader(jwtProperties.getAdminTokenName());
          if(token==null||token.isEmpty()){
              log.info("请求头没有token");
+             response.setStatus(401);
              return false;
          }else {
              log.info("请求令牌token:{}",token);
              Claims claims = JwtUtil.parseJWT(jwtProperties.getAdminSecretKey(),token);
-             String username = claims.get("username").toString();
-             log.info("用户名:{}",username);
+
+
+
+             String username = claims.get(ResultConstant.USER_NAME).toString();
+             Integer userId=Integer.valueOf(claims.get(ResultConstant.USER_ID).toString());
+             log.info("用户名:{},用户id:{}",username,userId);
+             //将用户名放入ThreadLocal中,TODO,使用ThreadLocal存储用户信息,需要编写BaseContext类
+             BaseContext.setCurrentUserId(userId);
+
+             //将用户名放入MDC中
+             MDC.put(ResultConstant.USER_NAME,username);
+             MDC.put(ResultConstant.USER_ID,userId.toString());
              return true;
          }
 

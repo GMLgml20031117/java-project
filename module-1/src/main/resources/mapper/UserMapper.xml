@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.maolong.mapper.UserMapper">
+    <insert id="saveUser">
+        insert into user(user_name,user_real_name,role_id,user_mobile,user_sex,user_email) values(#{userName},#{userRealName},#{roleId},#{userMobile},#{userSex},#{userEmail});
+    </insert>
 
+    <select id="getUsersByConditions" resultType="com.maolong.pojo.entity.User">
+        select * from user
+        <where>
+            <if test="userName != null and userName != ''">
+                user_name like concat('%',#{userName},'%')
+            </if>
+            <if test="userMobile != null and userMobile != ''">
+                and user_mobile like concat('%',#{userMobile},'%')
+            </if>
+            <if test="isLock != null and isLock != ''">
+                and is_lock = #{isLock}
+            </if>
+            <if test="deptId != null and deptId != ''">
+                and dept_id = #{deptId}
+            </if>
+        </where>
+    </select>
 </mapper>

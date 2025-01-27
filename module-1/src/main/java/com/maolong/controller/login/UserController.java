@@ -1,5 +1,6 @@
 package com.maolong.controller.login;
 import com.maolong.common.consitant.LoginMessage;
+import com.maolong.common.consitant.ResultConstant;
 import com.maolong.common.properties.JwtProperties;
 import com.maolong.common.result.LoginResult;
 import com.maolong.common.util.JwtUtil;
@@ -24,7 +25,7 @@ import java.util.HashMap;
  * @since 2025-01-19
  */
 @Slf4j
-@Api(tags = "用户管理")
+@Api(tags = "登录管理")
 @RestController
 @RequestMapping("/User")
 public class UserController {
@@ -34,23 +35,23 @@ public class UserController {
     @Autowired
     private JwtProperties jwtProperties;
 
-    @ApiModelProperty(value = "用户登录验证")
+    @ApiModelProperty(value = "登录验证")
     @PostMapping("/login")
     public LoginResult user(@RequestBody LoginDTO user) {
         log.info("进行用户登录,用户信息：{}", user);
         //使用md5加密算法,先将密码加密，然后与数据库中的密码做对比
         String decodePassword = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
         user.setPassword(decodePassword);
-        User result = userService.login(user);
+        User userResult = userService.login(user);
 
-        if (result != null) {
+        if (userResult != null) {
             HashMap<String, Object> claims = new HashMap<>();
             //将用户id和用户名放进jwt中的paylaod载体种
-            claims.put("id", result.getId());
-            claims.put("username", result.getUsername());
+            claims.put(ResultConstant.USER_ID, userResult.getId());
+            claims.put(ResultConstant.USER_NAME, userResult.getUserName());
             String jwt = JwtUtil.createJWT(jwtProperties.getAdminSecretKey(), jwtProperties.getAdminTtl(), claims);
             log.info("生成的token是{}",jwt);
-            return LoginResult.success(result,jwt);
+            return LoginResult.success(userResult,jwt);
         } else
             return LoginResult.error(LoginMessage.LOGIN_FAIL);
     }

@@ -1,8 +1,12 @@
 package com.maolong.service;
 
+import com.maolong.common.result.PageResult;
 import com.maolong.pojo.dto.LoginDTO;
+import com.maolong.pojo.dto.UserDTO;
 import com.maolong.pojo.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -15,4 +19,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IUserService extends IService<User> {
    public User login(LoginDTO user);
 
+   /**
+    * 实现分页查询
+    * @param userDTO
+    * @return
+    */
+   public PageResult<User> getUsersByConditions(UserDTO userDTO);
+   /**
+    * 实现保存功能
+    */
+   public boolean saveUser(UserDTO userDTO);
 }
