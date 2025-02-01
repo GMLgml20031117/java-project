@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="完成了数据的查改增，通过前端的token获得的id">
+    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="完成了用户界面，以及部门管理界面">
       <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/DeptController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/DeptMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/DeptDTO.java" afterDir="false" />
@@ -258,7 +258,7 @@
       <workItem from="1737447470399" duration="10294000" />
       <workItem from="1737626187396" duration="20693000" />
       <workItem from="1737814009826" duration="32041000" />
-      <workItem from="1738375952095" duration="17272000" />
+      <workItem from="1738375952095" duration="17641000" />
     </task>
     <task id="LOCAL-00001" summary="完成jwt,下一步，重新配置swagger换位knife">
       <option name="closed" value="true" />
@@ -300,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737990533451</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="完成了用户界面，以及部门管理界面">
+      <option name="closed" value="true" />
+      <created>1738397256260</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1738397256260</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +320,8 @@
     <MESSAGE value="编写拦截器，实现了登录拦截功能，必须携带相应的token才可以登录" />
     <MESSAGE value="完成了数据库的修改，以及分页查询的初步" />
     <MESSAGE value="完成了数据的查改增，通过前端的token获得的id" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了数据的查改增，通过前端的token获得的id" />
+    <MESSAGE value="完成了用户界面，以及部门管理界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了用户界面，以及部门管理界面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
