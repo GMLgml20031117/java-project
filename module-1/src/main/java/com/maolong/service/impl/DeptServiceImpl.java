@@ -9,7 +9,6 @@ import com.maolong.mapper.DeptMapper;
 import com.maolong.mapper.UserMapper;
 import com.maolong.pojo.dto.DeptDTO;
 import com.maolong.pojo.entity.Dept;
-import com.maolong.pojo.entity.User;
 import com.maolong.service.IDeptService;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
