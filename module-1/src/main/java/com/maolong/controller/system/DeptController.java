@@ -31,12 +31,14 @@ public class DeptController {
         return Result.success(deptsByConditions);
     }
 
+    @ApiModelProperty("新增接口和修改接口")
     @PostMapping("/save")
     public Result save(@RequestBody Dept dept){
         log.info("进入了save方法，{}",dept);
         return deptService.saveOrUpdate(dept)?Result.success():Result.error("保存失败");
     }
 
+    @ApiModelProperty("删除接口")
     @GetMapping("/delete")
     public Result delete(@RequestParam String ids){
         log.info("进入了delete方法，{}",ids);
