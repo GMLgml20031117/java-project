@@ -6,6 +6,7 @@ import com.maolong.pojo.dto.UserDTO;
 import com.maolong.pojo.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -26,6 +27,10 @@ public interface UserMapper extends BaseMapper<User> {
 
     //保存用户信息
     int saveUser(User user);
+
+    //重置密码
+    @Update("update user set user_password=#{password} where user_id=#{userId}")
+    int resetPwd(String userId,String password);
 
 
 }

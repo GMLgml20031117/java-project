@@ -14,7 +14,10 @@ public class ResultConstant {
 
     //用户的用户名与用户id
     public static final String USER_NAME="userName";
-    public static final String USER_ID="userId";
+    public static final String USER_ID="user_id";
+    public static final String ID="id";
+    public static final String USER_PASSWORD="123456";
+    public static final String IS_LOCK="is_lock";
 
 
 }

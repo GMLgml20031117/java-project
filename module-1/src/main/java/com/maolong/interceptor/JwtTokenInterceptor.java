@@ -31,28 +31,31 @@ public class JwtTokenInterceptor implements HandlerInterceptor {
 
          //检测是否有请求头令牌
          String token = request.getHeader(jwtProperties.getAdminTokenName());
+
          if(token==null||token.isEmpty()){
-             log.info("请求头没有token");
-             response.setStatus(401);
-             return false;
+             token=request.getParameter(jwtProperties.getAdminTokenName());
+             if(token==null||token.isEmpty()){
+                 log.info("请求头没有token");
+                 response.setStatus(401);
+                 return false;
+             }else
+                 return util(token);
          }else {
-             log.info("请求令牌token:{}",token);
-             Claims claims = JwtUtil.parseJWT(jwtProperties.getAdminSecretKey(),token);
-
-
-
-             String username = claims.get(ResultConstant.USER_NAME).toString();
-             Integer userId=Integer.valueOf(claims.get(ResultConstant.USER_ID).toString());
-             log.info("用户名:{},用户id:{}",username,userId);
-             //将用户名放入ThreadLocal中,TODO,使用ThreadLocal存储用户信息,需要编写BaseContext类
-             BaseContext.setCurrentUserId(userId);
-
-             //将用户名放入MDC中
-             MDC.put(ResultConstant.USER_NAME,username);
-             MDC.put(ResultConstant.USER_ID,userId.toString());
-             return true;
+             return util(token);
          }
+    }
 
-
+    public boolean util(String token){
+        log.info("请求令牌token:{}",token);
+        Claims claims = JwtUtil.parseJWT(jwtProperties.getAdminSecretKey(),token);
+        String username = claims.get(ResultConstant.USER_NAME).toString();
+        Integer userId=Integer.valueOf(claims.get(ResultConstant.USER_ID).toString());
+        log.info("用户名:{},用户id:{}",username,userId);
+        //将用户名放入ThreadLocal中,TODO,使用ThreadLocal存储用户信息,需要编写BaseContext类
+        BaseContext.setCurrentUserId(userId);
+        //将用户名放入MDC中
+        MDC.put(ResultConstant.USER_NAME,username);
+        MDC.put(ResultConstant.USER_ID,userId.toString());
+        return true;
     }
 }

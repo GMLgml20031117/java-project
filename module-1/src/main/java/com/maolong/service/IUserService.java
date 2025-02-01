@@ -29,4 +29,8 @@ public interface IUserService extends IService<User> {
     * 实现保存功能
     */
    public boolean saveUser(UserDTO userDTO);
+
+   boolean resetPwd(String userId);
+
+   boolean lock(String userId, String lock);
 }

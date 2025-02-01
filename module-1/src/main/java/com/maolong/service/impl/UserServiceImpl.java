@@ -18,6 +18,7 @@ import org.slf4j.MDC;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -59,30 +60,69 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
     /**
      * 保存以及更新方法
+     * 通过先通过用户id查询是否存在，不存在的话，则新增，存在的话，则更新
      */
     @Override
     public boolean saveUser(UserDTO userDTO) {
         User user = new User();
         BeanUtils.copyProperties(userDTO,user);
         //先判断是否有id,有id则更新,没有id则新增，这里直接使用了mybatis-plus中的东西
-        User ifUser = userMapper.selectOne(new QueryWrapper<User>().eq("user_name", user.getUserName()));
+        User ifUser = userMapper.selectOne(new QueryWrapper<User>().eq(ResultConstant.USER_ID, user.getUserId()));
         if (ifUser == null) {
-            String s = MDC.get(ResultConstant.USER_NAME);
-            log.info("当前用户名:{}",s);
-            user.setAddUser(s);
-            user.setUserPassword("123456");
-            user.setIsLock("N");
-            user.setAddTime(LocalDateTime.now());
-            user.setEditTime(LocalDateTime.now());
+            user = userDefault(user);
+            System.out.println(user);
             return userMapper.insert(user)>0?true:false;
         }else{
-            user.setId(Integer.valueOf(MDC.get(ResultConstant.USER_ID)));
-            return userMapper.updateById(user)>0?true:false;//直接使用了mybatis-plus中的东西
+            user = userEditDefault(user);
+            return userMapper.update(user,new UpdateWrapper<User>().eq(ResultConstant.USER_ID,user.getUserId()))>0?true:false;//直接使用了mybatis-plus中的东西
         }
 
+    }
+    /**
+     * 重置密码
+     * @param userId
+     * @return
+     */
+    @Override
+    public boolean resetPwd(String userId) {
+        return userMapper.resetPwd(userId,userDefault(new User()).getUserPassword())>0?true:false;
+    }
 
+    @Override
+    public boolean lock(String userId, String lock) {
+        UpdateWrapper<User> userUpdateWrapper = new UpdateWrapper<>();
+        if (lock.equals("N")){
+            userUpdateWrapper.eq(ResultConstant.USER_ID,userId).set(ResultConstant.IS_LOCK,"F");
+        }else{
+            userUpdateWrapper.eq(ResultConstant.USER_ID,userId).set(ResultConstant.IS_LOCK,"N");
+        }
+        return userMapper.update(null,userUpdateWrapper)>0?true:false;
 
+    }
 
+    /**
+     * 用来设置一些user的默认属性
+     * @param user
+     * @return
+     */
+    public User userDefault(User user){
+        String s = MDC.get(ResultConstant.USER_NAME);
+        user.setAddUser(s);
+        user.setEditUser(s);
+        user.setUserPassword(DigestUtils.md5DigestAsHex(ResultConstant.USER_PASSWORD.getBytes()));
+        user.setIsLock("N");
+        user.setAddTime(LocalDateTime.now());
+        user.setEditTime(LocalDateTime.now());
+        return user;
+    }
 
+    /**
+     * 用来设置编辑user的一些默认操作
+     */
+    public User userEditDefault(User user){
+        String s = MDC.get(ResultConstant.USER_NAME);
+        user.setEditUser(s);
+        user.setEditTime(LocalDateTime.now());
+        return user;
     }
 }

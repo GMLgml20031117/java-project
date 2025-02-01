@@ -4,27 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="完成了数据库的修改，以及分页查询的初步">
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/BaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/result/PageResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/util/BaseContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/MyExceptionHandler.java" afterDir="false" />
+    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="完成了数据的查改增，通过前端的token获得的id">
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/DeptController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/DeptMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/DeptDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Dept.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IDeptService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/DeptServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/resources/mapper/DeptMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/consitant/ResultConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/consitant/ResultConstant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/handler/MyMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/handler/MyMetaObjectHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/result/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/login/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/login/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserSystemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/login/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/interceptor/JwtTokenInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/interceptor/JwtTokenInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/UserDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/response/UserResponse.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="application.yml" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -87,7 +90,7 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Maven/apache-maven-3.6.3/responsitory/org/springframework/spring-webmvc/5.3.23/spring-webmvc-5.3.23.jar",
+    "last_opened_file_path": "E:/java/project/Java-Project/module-1/src/main/resources/mapper",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -102,7 +105,11 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.maolong.service.impl" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\java\project\Java-Project\module-1\src\main\resources\mapper" />
       <recent name="E:\java\project\Java-Project\module-1\src\main\java\com\maolong\common" />
       <recent name="C:\Users\86157\Desktop\MyFiles\Java\Java-Project\module-1\src\main\java\com\maolong" />
     </key>
@@ -250,7 +257,8 @@
       <workItem from="1737340120277" duration="7656000" />
       <workItem from="1737447470399" duration="10294000" />
       <workItem from="1737626187396" duration="20693000" />
-      <workItem from="1737814009826" duration="25556000" />
+      <workItem from="1737814009826" duration="32041000" />
+      <workItem from="1738375952095" duration="17272000" />
     </task>
     <task id="LOCAL-00001" summary="完成jwt,下一步，重新配置swagger换位knife">
       <option name="closed" value="true" />
@@ -284,7 +292,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737897840778</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="完成了数据的查改增，通过前端的token获得的id">
+      <option name="closed" value="true" />
+      <created>1737990533451</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737990533451</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +311,8 @@
     <MESSAGE value="完成jwt,下一步，重新配置swagger换位knife" />
     <MESSAGE value="编写拦截器，实现了登录拦截功能，必须携带相应的token才可以登录" />
     <MESSAGE value="完成了数据库的修改，以及分页查询的初步" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了数据库的修改，以及分页查询的初步" />
+    <MESSAGE value="完成了数据的查改增，通过前端的token获得的id" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了数据的查改增，通过前端的token获得的id" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -310,13 +327,8 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/module-1/src/main/java/com/maolong/interceptor/JwtTokenInterceptor.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/UserServiceImpl.java</url>
-          <line>53</line>
+          <line>54</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
