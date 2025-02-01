@@ -1,50 +1,49 @@
 package com.maolong.controller.system;
 
 
-import com.maolong.common.consitant.ResultConstant;
 import com.maolong.common.result.PageResult;
 import com.maolong.common.result.Result;
 import com.maolong.pojo.dto.DeptDTO;
+import com.maolong.pojo.dto.RoleDTO;
 import com.maolong.pojo.entity.Dept;
+import com.maolong.pojo.entity.Role;
 import com.maolong.service.IDeptService;
+import com.maolong.service.IRoleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
-@Api(tags = "部门管理")
-@RequestMapping("/Dept")
-public class DeptController {
-
+@Api(tags = "角色管理")
+@RequestMapping("/Role")
+public class RoleController {
     @Autowired
-    IDeptService deptService;
+    IRoleService roleService;
 
     @ApiOperation("查询接口")
     @PostMapping("/list")
-    public Result list(@RequestBody DeptDTO deptDTO){
-        log.info("查询的参数信息为{}",deptDTO);
-        PageResult<Dept> deptsByConditions = deptService.getDeptsByConditions(deptDTO);
-        return Result.success(deptsByConditions);
+    public Result list(@RequestBody RoleDTO roleDTO){
+        log.info("查询的参数信息为{}",roleDTO);
+        PageResult<Role> rolesByConditions = roleService.getRolesByConditions(roleDTO);
+        return Result.success(rolesByConditions);
     }
 
     @ApiOperation("新增接口和修改接口")
     @PostMapping("/save")
-    public Result save(@RequestBody Dept dept){
-        log.info("进入了save方法，{}",dept);
-        return deptService.saveOrUpdate(dept)?Result.success():Result.error("保存失败");
+    public Result save(@RequestBody Role role){
+        log.info("进入了save方法，{}",role);
+        return roleService.saveOrUpdate(role)?Result.success():Result.error("保存失败");
     }
 
     @ApiOperation("删除接口")
-    @GetMapping("/delete")
+    @DeleteMapping("/delete")
     public Result delete(@RequestParam String ids){
         log.info("进入了delete方法，{}",ids);
-        return deptService.removeById(ids)?Result.success():Result.error("删除失败");
+        return roleService.removeById(ids)?Result.success():Result.error("删除失败");
     }
-
 
 }

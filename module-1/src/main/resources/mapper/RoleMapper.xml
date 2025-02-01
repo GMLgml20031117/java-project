@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.maolong.mapper.RoleMapper">
+
+    <select id="selectRolesByConditions" resultType="com.maolong.pojo.entity.Role">
+        select * from role
+        <where>
+            <if test="roleNo != null and roleNo != ''">
+                role_No like concat('%',#{roleNo},'%')
+            </if>
+            <if test="roleName != null and roleName != ''">
+                and role_name like concat('%',#{roleName},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

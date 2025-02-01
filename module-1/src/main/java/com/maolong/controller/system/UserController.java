@@ -14,6 +14,7 @@ import com.maolong.pojo.entity.User;
 import com.maolong.service.IUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
@@ -23,7 +24,7 @@ import java.util.Map;
 
 @Slf4j
 @RestController
-@Api("用户管理以及登录验证")
+@Api(tags = "用户管理以及登录验证")
 @RequestMapping("/User")
 public class UserController {
 
@@ -32,7 +33,7 @@ public class UserController {
     @Autowired
     private JwtProperties jwtProperties;
 
-    @ApiModelProperty(value = "登录验证")
+    @ApiOperation(value = "登录验证")
     @PostMapping("/login")
     public LoginResult user(@RequestBody LoginDTO user) {
         log.info("进行用户登录,用户信息：{}", user);
@@ -54,7 +55,7 @@ public class UserController {
     }
 
 
-    @ApiModelProperty("查询用户")
+    @ApiOperation("查询用户")
     @PostMapping("/list")
     public Result query(@RequestBody UserDTO userDTO){
         log.info("查询信息:{}",userDTO);
@@ -71,7 +72,7 @@ public class UserController {
      * @param userDTO
      * @return
      */
-    @ApiModelProperty("保存编辑用户")
+    @ApiOperation("保存编辑用户")
     @PostMapping("/save")
     public Result save(@RequestBody UserDTO userDTO){
         log.info("待保存用户信息:{}",userDTO);
@@ -80,7 +81,7 @@ public class UserController {
 
     }
 
-    @ApiModelProperty("删除用户")
+    @ApiOperation("删除用户")
     @DeleteMapping("/delete")
     public Result delete(Integer ids){
         log.info("待删除用户id:{}",ids);
@@ -88,7 +89,7 @@ public class UserController {
 
     }
 
-    @ApiModelProperty("重置密码")
+    @ApiOperation("重置密码")
     @PostMapping("/pwd")
     public Result resetPwd(@RequestBody Map<String,Object>map){
         log.info("待重置密码用户userId:{}",map.get("userId"));
@@ -96,7 +97,7 @@ public class UserController {
         return userService.resetPwd(userId)?Result.success():Result.error("重置密码失败");
     }
 
-    @ApiModelProperty("修改状态")
+    @ApiOperation("修改状态")
     @GetMapping("/lock")
     public Result lock(String userId,String lock){
         log.info("待修改状态用户id:{},状态:{}",userId,lock);

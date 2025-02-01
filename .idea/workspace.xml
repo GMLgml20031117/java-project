@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="完成了用户界面，以及部门管理界面">
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/ModuleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/RoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/RoleDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/resources/mapper/RoleMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/DeptController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +105,10 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\java\project\Java-Project\module-1\src\main\resources\mapper" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.maolong.service" />
+      <recent name="com.maolong.mapper" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Module1Application">
@@ -237,7 +252,7 @@
       <workItem from="1737447470399" duration="10294000" />
       <workItem from="1737626187396" duration="20693000" />
       <workItem from="1737814009826" duration="32041000" />
-      <workItem from="1738375952095" duration="17941000" />
+      <workItem from="1738375952095" duration="22676000" />
     </task>
     <task id="LOCAL-00001" summary="完成jwt,下一步，重新配置swagger换位knife">
       <option name="closed" value="true" />
@@ -295,7 +310,23 @@
       <option name="project" value="LOCAL" />
       <updated>1738397558305</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="完成了用户界面，以及部门管理界面">
+      <option name="closed" value="true" />
+      <created>1738397639199</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1738397639199</updated>
+    </task>
+    <task id="LOCAL-00009" summary="完成了用户界面，以及部门管理界面">
+      <option name="closed" value="true" />
+      <created>1738397868936</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1738397868936</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

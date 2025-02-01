@@ -20,7 +20,10 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+
 @Slf4j
 @Configuration
 @EnableSwagger2
@@ -32,9 +35,17 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         log.info("开始注册自定义拦截器...");
+        List<String> excludePath=new ArrayList<>();
+        excludePath.add("/doc.html");            // Knife4j 页面
+        excludePath.add("/webjars/**");          // 静态资源
+        excludePath.add("/swagger-resources/**");// Swagger 配置
+        excludePath.add("/v2/api-docs");         // API 文档 JSON
+        excludePath.add("/v3/api-docs");
+        excludePath.add("/swagger-ui/**");       // Swagger UI 资源
+        excludePath.add("/User/login");
         registry.addInterceptor(jwtTokenInterceptor)
-                .addPathPatterns("/**/**")
-                .excludePathPatterns("/User/login");
+                .addPathPatterns("/**")
+                .excludePathPatterns(excludePath);
     }
 
 
