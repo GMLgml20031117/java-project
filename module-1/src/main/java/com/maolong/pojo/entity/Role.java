@@ -7,10 +7,11 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
-public class Role {
+public class Role implements Serializable{
     @TableId(value="role_id",type = IdType.AUTO)
     private Integer roleId;
     private String roleName;

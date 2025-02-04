@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="完成了用户界面，以及部门管理界面">
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/ModuleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/RoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/RoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/RoleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IRoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/resources/mapper/RoleMapper.xml" afterDir="false" />
+    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="完善了knife4j的文档">
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/ModuleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/ModuleDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Module.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/vo/ModuleTreeDataVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/vo/NodesVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/ModuleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/ModuleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/DeptController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/MyExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/MyExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/ModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/ModuleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Role.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +41,6 @@
         <option name="userSettingsFile" value="D:\Maven\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
-  </component>
-  <component name="PerforceDirect.Settings">
-    <option name="CHARSET" value="无" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -80,7 +76,7 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/java/project/Java-Project/module-1/src/main/resources/mapper",
+    "last_opened_file_path": "D:/Maven/apache-maven-3.6.3/responsitory/com/baomidou/mybatis-plus-extension/3.5.2/mybatis-plus-extension-3.5.2.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -96,7 +92,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.maolong.pojo.dto" />
+      <recent name="com.maolong.pojo.vo" />
+      <recent name="com.maolong.mapper" />
       <recent name="com.maolong.service.impl" />
+      <recent name="com.maolong.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\java\project\Java-Project\module-1\src\main\resources\mapper" />
@@ -252,7 +252,10 @@
       <workItem from="1737447470399" duration="10294000" />
       <workItem from="1737626187396" duration="20693000" />
       <workItem from="1737814009826" duration="32041000" />
-      <workItem from="1738375952095" duration="22676000" />
+      <workItem from="1738375952095" duration="27173000" />
+      <workItem from="1738561856162" duration="2013000" />
+      <workItem from="1738632289482" duration="596000" />
+      <workItem from="1738649580386" duration="5977000" />
     </task>
     <task id="LOCAL-00001" summary="完成jwt,下一步，重新配置swagger换位knife">
       <option name="closed" value="true" />
@@ -326,7 +329,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738397868936</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="完善了knife4j的文档">
+      <option name="closed" value="true" />
+      <created>1738403981199</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1738403981199</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +350,8 @@
     <MESSAGE value="完成了数据库的修改，以及分页查询的初步" />
     <MESSAGE value="完成了数据的查改增，通过前端的token获得的id" />
     <MESSAGE value="完成了用户界面，以及部门管理界面" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了用户界面，以及部门管理界面" />
+    <MESSAGE value="完善了knife4j的文档" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善了knife4j的文档" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
