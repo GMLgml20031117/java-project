@@ -4,18 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="完善了knife4j的文档">
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/ModuleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/ModuleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Module.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/vo/ModuleTreeDataVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/vo/NodesVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/ModuleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/ModuleServiceImpl.java" afterDir="false" />
+    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="完成了菜单管理模块">
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/FindFailException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/serializer/StringListDeserializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/util/StringToListUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/util/TreeDataUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/RoleRightController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/RoleRightMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/TestMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/RoleRightDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/RoleRightService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RoleRightServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/resources/mapper/RoleRightMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/test/java/com/maolong/TestBoolean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/test/java/com/maolong/TestTreeData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/MyExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/MyExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/ModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/ModuleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/BaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/BaseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/MyExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/MyExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/vo/ModuleTreeDataVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/vo/ModuleTreeDataVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/ModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/ModuleServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,10 +68,12 @@
     "Application.MyGenerate.executor": "Run",
     "JUnit.Module1ApplicationTests.contextLoads.executor": "Run",
     "JUnit.Module1ApplicationTests.executor": "Run",
+    "JUnit.TestBoolean.test.executor": "Run",
     "JUnit.TestJwt.testJwt.executor": "Run",
     "JUnit.TestLogin.testLogin.executor": "Run",
     "JUnit.TestLogin.testUtil.executor": "Run",
     "JUnit.TestMD5.testMD5.executor": "Run",
+    "JUnit.TestTreeData.test.executor": "Run",
     "Maven.Java-Project [clean].executor": "Run",
     "Maven.module-1 [clean].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -76,7 +87,7 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Maven/apache-maven-3.6.3/responsitory/com/baomidou/mybatis-plus-extension/3.5.2/mybatis-plus-extension-3.5.2.jar",
+    "last_opened_file_path": "E:/java/project/Java-Project/module-1/src/main/resources/mapper",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -92,11 +103,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.maolong.pojo.dto" />
-      <recent name="com.maolong.pojo.vo" />
       <recent name="com.maolong.mapper" />
       <recent name="com.maolong.service.impl" />
       <recent name="com.maolong.service" />
+      <recent name="com.maolong.pojo.dto" />
+      <recent name="com.maolong.pojo.vo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\java\project\Java-Project\module-1\src\main\resources\mapper" />
@@ -111,8 +122,21 @@
       <recent name="com.maolong.mapper" />
     </key>
   </component>
+  <component name="RedisHelper">
+    <option name="connections">
+      <list>
+        <ConnectionInfo>
+          <option name="global" value="false" />
+          <option name="id" value="24cd5abc-bb11-47c5-a8eb-c9efb919afab" />
+          <option name="name" value="redis" />
+          <option name="port" value="6379" />
+          <option name="url" value="182.92.151.172" />
+        </ConnectionInfo>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Spring Boot.Module1Application">
-    <configuration name="Module1ApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestBoolean.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="module-1" />
       <extension name="coverage">
         <pattern>
@@ -121,8 +145,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.maolong" />
-      <option name="MAIN_CLASS_NAME" value="com.maolong.Module1ApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="MAIN_CLASS_NAME" value="com.maolong.TestBoolean" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,22 +163,6 @@
       <option name="PACKAGE_NAME" value="com.maolong" />
       <option name="MAIN_CLASS_NAME" value="com.maolong.TestJwt" />
       <option name="METHOD_NAME" value="testJwt" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestLogin.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="module-1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.maolong.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.maolong" />
-      <option name="MAIN_CLASS_NAME" value="com.maolong.TestLogin" />
-      <option name="METHOD_NAME" value="testLogin" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -192,6 +200,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestTreeData.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="module-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.maolong.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.maolong" />
+      <option name="MAIN_CLASS_NAME" value="com.maolong.TestTreeData" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JavaProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="Java-Project" />
@@ -210,21 +234,21 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.TestBoolean.test" />
+      <item itemvalue="JUnit.TestTreeData.test" />
       <item itemvalue="JUnit.TestJwt.testJwt" />
       <item itemvalue="JUnit.TestMD5.testMD5" />
-      <item itemvalue="JUnit.Module1ApplicationTests.contextLoads" />
-      <item itemvalue="JUnit.TestLogin.testLogin" />
       <item itemvalue="JUnit.TestLogin.testUtil" />
       <item itemvalue="Spring Boot.JavaProjectApplication" />
       <item itemvalue="Spring Boot.Module1Application" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestBoolean.test" />
+        <item itemvalue="JUnit.TestTreeData.test" />
         <item itemvalue="JUnit.TestJwt.testJwt" />
         <item itemvalue="JUnit.TestMD5.testMD5" />
         <item itemvalue="JUnit.TestLogin.testUtil" />
-        <item itemvalue="JUnit.TestLogin.testLogin" />
-        <item itemvalue="JUnit.Module1ApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -256,6 +280,9 @@
       <workItem from="1738561856162" duration="2013000" />
       <workItem from="1738632289482" duration="596000" />
       <workItem from="1738649580386" duration="5977000" />
+      <workItem from="1738660694359" duration="675000" />
+      <workItem from="1738672882570" duration="2480000" />
+      <workItem from="1738718635960" duration="23813000" />
     </task>
     <task id="LOCAL-00001" summary="完成jwt,下一步，重新配置swagger换位knife">
       <option name="closed" value="true" />
@@ -337,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738403981199</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="完成了菜单管理模块">
+      <option name="closed" value="true" />
+      <created>1738660720874</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1738660720874</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +386,8 @@
     <MESSAGE value="完成了数据的查改增，通过前端的token获得的id" />
     <MESSAGE value="完成了用户界面，以及部门管理界面" />
     <MESSAGE value="完善了knife4j的文档" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善了knife4j的文档" />
+    <MESSAGE value="完成了菜单管理模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了菜单管理模块" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -369,6 +405,21 @@
           <url>file://$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/UserServiceImpl.java</url>
           <line>54</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/module-1/src/test/java/com/maolong/TestTreeData.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/ModuleServiceImpl.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/ModuleServiceImpl.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

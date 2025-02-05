@@ -29,6 +29,9 @@ public class Module implements Serializable {
     private Integer systemNo;
     private String isLeaf;
     private String fullIndex;
+    private boolean open;
+    private boolean checked;
+
 
     private String addUser;
     @DateTimeFormat(pattern="yy-mm-dd HH:mm:ss")

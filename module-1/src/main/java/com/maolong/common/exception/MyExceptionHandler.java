@@ -18,6 +18,6 @@ public class MyExceptionHandler {
      */
     @ExceptionHandler(BaseException.class)
     public Result handleException(BaseException e){
-        return Result.error(e.getMsg());
+        return Result.error(e.getMessage());
     }
 }

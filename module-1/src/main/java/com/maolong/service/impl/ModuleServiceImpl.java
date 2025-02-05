@@ -2,6 +2,7 @@ package com.maolong.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.maolong.common.util.TreeDataUtil;
 import com.maolong.mapper.ModuleMapper;
 import com.maolong.pojo.entity.Module;
 import com.maolong.pojo.vo.ModuleTreeDataVO;
@@ -10,10 +11,8 @@ import com.maolong.service.ModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class ModuleServiceImpl extends ServiceImpl<ModuleMapper,Module> implements ModuleService {
@@ -30,9 +29,6 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper,Module> implemen
             });
         }
 
-        nodes.forEach(node -> {
-            System.out.println(node);
-        });
 
         return nodes;
     }
@@ -41,18 +37,23 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper,Module> implemen
     public List<ModuleTreeDataVO> getTreeData() {
         List<Module> modules = moduleMapper.selectList(null);
         modules.sort(Comparator.comparing(Module::getModuleOrder));
+
         List<ModuleTreeDataVO> treeData = new ArrayList<>();
         if (modules != null && modules.size() > 0) {
-            modules.forEach(module -> {
+            for (Module module : modules) {
                 treeData.add(new ModuleTreeDataVO().builder()
                         .id(module.getModuleId())
                         .pId(module.getParentId())
                         .name(module.getModuleName())
-                        .open(true)
-                        .checked(false)
+                        .open(module.isOpen())
+                        .checked(module.isChecked())
+                        .children(new ArrayList<>())
                         .build());
-            });
+            }
         }
+        //构造树结构
+        treeData= TreeDataUtil.getTrees(treeData);
+
         return treeData;
     }
 
@@ -62,6 +63,7 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper,Module> implemen
         return module;
 
     }
+
 
 
 }
