@@ -17,9 +17,6 @@
             <if test="isLock != null and isLock != ''">
                 and is_lock = #{isLock}
             </if>
-            <if test="deptId != null and deptId != ''">
-                and dept_id = #{deptId}
-            </if>
         </where>
     </select>
 </mapper>

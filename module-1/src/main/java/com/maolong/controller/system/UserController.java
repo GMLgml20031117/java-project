@@ -10,7 +10,11 @@ import com.maolong.common.result.Result;
 import com.maolong.common.util.JwtUtil;
 import com.maolong.pojo.dto.LoginDTO;
 import com.maolong.pojo.dto.UserDTO;
+import com.maolong.pojo.entity.Dept;
 import com.maolong.pojo.entity.User;
+import com.maolong.pojo.vo.DeptVO;
+import com.maolong.pojo.vo.UserRoleVO;
+import com.maolong.service.IDeptService;
 import com.maolong.service.IUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModelProperty;
@@ -19,7 +23,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -32,6 +39,9 @@ public class UserController {
     private IUserService userService;
     @Autowired
     private JwtProperties jwtProperties;
+    @Autowired
+    private IDeptService iDeptService;
+
 
     @ApiOperation(value = "登录验证")
     @PostMapping("/login")
@@ -103,5 +113,19 @@ public class UserController {
         log.info("待修改状态用户id:{},状态:{}",userId,lock);
         return userService.lock(userId,lock)?Result.success():Result.error("修改状态失败");
     }
+
+    @ApiOperation("获取用户角色")
+    @GetMapping("/role")
+    public Result getRole(){
+        List<UserRoleVO> roles = userService.getRoles();
+        return Result.success(roles);
+    }
+    @ApiOperation("获取公司部门信息")
+    @GetMapping("/dept")
+    public Result getDept(){
+        List<DeptVO> depts = iDeptService.getDepts();
+        return Result.success(depts);
+    }
+
 
 }

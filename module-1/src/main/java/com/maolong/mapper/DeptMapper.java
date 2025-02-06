@@ -11,4 +11,5 @@ import java.util.List;
 public interface DeptMapper extends BaseMapper<Dept> {
 
     Page<Dept> selectByConditions(DeptDTO deptDTO);
+
 }

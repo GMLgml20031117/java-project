@@ -9,11 +9,13 @@ import com.maolong.mapper.DeptMapper;
 import com.maolong.mapper.UserMapper;
 import com.maolong.pojo.dto.DeptDTO;
 import com.maolong.pojo.entity.Dept;
+import com.maolong.pojo.vo.DeptVO;
 import com.maolong.service.IDeptService;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -40,5 +42,16 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
             return this.save(dept);
         }else
             return this.updateById(dept);
+    }
+
+    @Override
+    public List<DeptVO> getDepts() {
+        List<Dept> depts = deptMapper.selectList(null);
+        List<DeptVO> deptVOs=new ArrayList<>();
+
+        depts.forEach(dept -> {
+            deptVOs.add(new DeptVO(dept.getDeptName(),dept.getDeptName()));
+        });
+        return deptVOs;
     }
 }

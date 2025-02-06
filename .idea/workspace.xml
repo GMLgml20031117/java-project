@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="补充完成了角色模块的菜单权限功能">
+    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="完成了第八天的任务">
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserDeptController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/vo/DeptVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/vo/UserRoleVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/RoleRightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/RoleRightController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/DeptMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/DeptMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/TestMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IDeptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IDeptService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/DeptServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/DeptServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RoleRightServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RoleRightServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +277,7 @@
       <workItem from="1738649580386" duration="5977000" />
       <workItem from="1738660694359" duration="675000" />
       <workItem from="1738672882570" duration="2480000" />
-      <workItem from="1738718635960" duration="24918000" />
+      <workItem from="1738718635960" duration="33206000" />
     </task>
     <task id="LOCAL-00001" summary="完成jwt,下一步，重新配置swagger换位knife">
       <option name="closed" value="true" />
@@ -364,11 +375,30 @@
       <option name="project" value="LOCAL" />
       <updated>1738776630938</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="完成了第八天的任务">
+      <option name="closed" value="true" />
+      <created>1738809640712</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1738809640712</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -380,7 +410,8 @@
     <MESSAGE value="完善了knife4j的文档" />
     <MESSAGE value="完成了菜单管理模块" />
     <MESSAGE value="补充完成了角色模块的菜单权限功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="补充完成了角色模块的菜单权限功能" />
+    <MESSAGE value="完成了第八天的任务" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了第八天的任务" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -393,11 +424,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/UserServiceImpl.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/module-1/src/test/java/com/maolong/TestTreeData.java</url>

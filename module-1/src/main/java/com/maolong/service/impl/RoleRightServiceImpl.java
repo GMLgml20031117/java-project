@@ -27,9 +27,9 @@ public class RoleRightServiceImpl implements RoleRightService {
     public List<ModuleTreeDataVO> getData(Integer id) {
         //查出来user对应的moduleIds
         List<Integer> moduleIds = roleRightMapper.listByRoleId(id);
-        if (moduleIds == null || moduleIds.isEmpty()) {
-            throw new FindFailException("数据不存在");
-        }else {
+//        if (moduleIds == null || moduleIds.isEmpty()) {
+////            throw new FindFailException("数据不存在");
+//        }else {
             List<ModuleTreeDataVO> treeData = new ArrayList<>();
             //查出来用户拥有的modules
             //似乎不太需要，只需要查询全部的，然后把上面user对应的moduleId设为true
@@ -38,32 +38,47 @@ public class RoleRightServiceImpl implements RoleRightService {
             List<Module> modules = moduleMapper.selectList(null);
 
 
-            //返回的其实是所有的菜单，只不过是用户拥有的菜单给设置为了选中状态
-            if (modules != null && modules.size() > 0) {
-                modules.forEach(module -> {
-                    if (moduleIds.contains(module.getModuleId())) {
-                        treeData.add(new ModuleTreeDataVO().builder()
-                                .id(module.getModuleId())
-                                .pId(module.getParentId())
-                                .name(module.getModuleName())
-                                .open(true)
-                                .checked(true)
-                                .children(new ArrayList<>())
-                                .build());
-                    }else{
-                        treeData.add(new ModuleTreeDataVO().builder()
-                                .id(module.getModuleId())
-                                .pId(module.getParentId())
-                                .name(module.getModuleName())
-                                .open(true)
-                                .checked(false)
-                                .children(new ArrayList<>())
-                                .build());
-                    }
-                });
+            if(moduleIds!=null && modules.size()>0){
+                //返回的其实是所有的菜单，只不过是用户拥有的菜单给设置为了选中状态
+                if (modules != null && modules.size() > 0) {
+                    modules.forEach(module -> {
+                        if (moduleIds.contains(module.getModuleId())) {
+                            treeData.add(new ModuleTreeDataVO().builder()
+                                    .id(module.getModuleId())
+                                    .pId(module.getParentId())
+                                    .name(module.getModuleName())
+                                    .open(true)
+                                    .checked(true)
+                                    .children(new ArrayList<>())
+                                    .build());
+                        }else{
+                            treeData.add(new ModuleTreeDataVO().builder()
+                                    .id(module.getModuleId())
+                                    .pId(module.getParentId())
+                                    .name(module.getModuleName())
+                                    .open(true)
+                                    .checked(false)
+                                    .children(new ArrayList<>())
+                                    .build());
+                        }
+                    });
+                }
+
+            }else {
+                if (modules != null && modules.size() > 0) {
+                    modules.forEach(module -> {
+                    treeData.add(new ModuleTreeDataVO().builder()
+                            .id(module.getModuleId())
+                            .pId(module.getParentId())
+                            .name(module.getModuleName())
+                            .open(true)
+                            .checked(false)
+                            .children(new ArrayList<>())
+                            .build());
+                    });
+                }
             }
-            return treeData;
-        }
+        return treeData;
     }
 
     /**

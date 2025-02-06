@@ -33,7 +33,7 @@ public class RoleRightController {
     public Result<List<ModuleTreeDataVO>> getTreeData(@PathVariable Integer id) {
         log.info("获取菜单权限{}",id);
         List<ModuleTreeDataVO> treeData = roleRightService.getData(id);
-        List<ModuleTreeDataVO> trees = TreeDataUtil.getTrees(treeData);
+//        List<ModuleTreeDataVO> trees = TreeDataUtil.getTrees(treeData);
         return Result.success(treeData);
     }
 

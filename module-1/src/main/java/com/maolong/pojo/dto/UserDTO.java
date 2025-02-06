@@ -3,8 +3,10 @@ package com.maolong.pojo.dto;
 import com.alibaba.druid.sql.visitor.functions.Char;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class UserDTO {
+public class UserDTO implements Serializable {
     private String userId;
     private String roleId;
     private String userEmail;
@@ -12,8 +14,9 @@ public class UserDTO {
     private String userSex;
     private String userName;
     private String userMobile;
+    //公司序号
+    private String deptName;
     private String isLock;
     private Integer page;
     private Integer limit;
-    private String deptId;
 }

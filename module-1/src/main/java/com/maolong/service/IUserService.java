@@ -5,6 +5,7 @@ import com.maolong.pojo.dto.LoginDTO;
 import com.maolong.pojo.dto.UserDTO;
 import com.maolong.pojo.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.maolong.pojo.vo.UserRoleVO;
 
 import java.util.List;
 
@@ -33,4 +34,6 @@ public interface IUserService extends IService<User> {
    boolean resetPwd(String userId);
 
    boolean lock(String userId, String lock);
+
+   List<UserRoleVO> getRoles();
 }

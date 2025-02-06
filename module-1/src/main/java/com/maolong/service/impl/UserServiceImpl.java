@@ -7,10 +7,13 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.maolong.common.consitant.ResultConstant;
 import com.maolong.common.result.PageResult;
+import com.maolong.mapper.RoleMapper;
 import com.maolong.pojo.dto.LoginDTO;
 import com.maolong.pojo.dto.UserDTO;
+import com.maolong.pojo.entity.Role;
 import com.maolong.pojo.entity.User;
 import com.maolong.mapper.UserMapper;
+import com.maolong.pojo.vo.UserRoleVO;
 import com.maolong.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +24,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -38,7 +42,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    RoleMapper roleMapper;
 
+    /**
+     * 验证登录
+     * @param user
+     * @return
+     */
     @Override
     public User login(LoginDTO user) {
         return userMapper.getByNameAndPasswordUser(user);
@@ -76,8 +87,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             user = userEditDefault(user);
             return userMapper.update(user,new UpdateWrapper<User>().eq(ResultConstant.USER_ID,user.getUserId()))>0?true:false;//直接使用了mybatis-plus中的东西
         }
-
     }
+
     /**
      * 重置密码
      * @param userId
@@ -100,8 +111,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     }
 
+
+
     /**
-     * 用来设置一些user的默认属性
+     * 用来设置一些user的默认属性，相当于工具类
      * @param user
      * @return
      */
@@ -117,7 +130,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     /**
-     * 用来设置编辑user的一些默认操作
+     * 用来设置编辑user的一些默认操作,相当于工具类
      */
     public User userEditDefault(User user){
         String s = MDC.get(ResultConstant.USER_NAME);
@@ -125,4 +138,24 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         user.setEditTime(LocalDateTime.now());
         return user;
     }
+
+    /**
+     * 获取用户的角色信息
+     * @return
+     */
+    @Override
+    public List<UserRoleVO> getRoles() {
+        List<Role> roles = roleMapper.selectList(null);
+        List<UserRoleVO> userRoleVOS=new ArrayList<>();
+
+        roles.forEach(role -> {
+            UserRoleVO userRoleVO = new UserRoleVO();
+            userRoleVO.setValue(role.getRoleId());
+            userRoleVO.setLabel(role.getRoleName());
+            userRoleVOS.add(userRoleVO);
+        });
+        return userRoleVOS;
+    }
+
+    
 }
