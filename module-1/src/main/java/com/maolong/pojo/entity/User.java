@@ -31,8 +31,6 @@ public class User implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    private String userId;
-
     private String userName;
 
     private String userRealName;

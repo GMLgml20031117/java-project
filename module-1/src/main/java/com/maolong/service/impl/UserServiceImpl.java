@@ -77,15 +77,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     public boolean saveUser(UserDTO userDTO) {
         User user = new User();
         BeanUtils.copyProperties(userDTO,user);
+
         //先判断是否有id,有id则更新,没有id则新增，这里直接使用了mybatis-plus中的东西
-        User ifUser = userMapper.selectOne(new QueryWrapper<User>().eq(ResultConstant.USER_ID, user.getUserId()));
+        User ifUser = userMapper.selectOne(new QueryWrapper<User>().eq(ResultConstant.ID, user.getId()));
         if (ifUser == null) {
             user = userDefault(user);
             System.out.println(user);
             return userMapper.insert(user)>0?true:false;
         }else{
             user = userEditDefault(user);
-            return userMapper.update(user,new UpdateWrapper<User>().eq(ResultConstant.USER_ID,user.getUserId()))>0?true:false;//直接使用了mybatis-plus中的东西
+            return userMapper.update(user,new UpdateWrapper<User>().eq(ResultConstant.ID,user.getId()))>0?true:false;//直接使用了mybatis-plus中的东西
         }
     }
 
@@ -157,5 +158,5 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return userRoleVOS;
     }
 
-    
+
 }
