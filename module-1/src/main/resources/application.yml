@@ -8,6 +8,10 @@ spring:
       url: jdbc:mysql://localhost:3306/java_project
       username: root
       password: gml20031117
+  redis:
+    host: 182.92.151.172
+    port: 6379
+    database: 11
 
 #      将swagger集成到Spring Boot项目中
   mvc:

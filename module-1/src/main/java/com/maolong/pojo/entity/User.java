@@ -43,7 +43,7 @@ public class User implements Serializable {
 
     private String userEmail;
 
-    private String roleId;
+    private String roleName;
 
     private String userPassword;
 
