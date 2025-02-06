@@ -43,6 +43,7 @@ public class RoleController {
     @DeleteMapping("/delete")
     public Result delete(@RequestParam String ids){
         log.info("进入了delete方法，{}",ids);
+        roleService.deleteByIds(ids);
         return roleService.removeById(ids)?Result.success():Result.error("删除失败");
     }
 

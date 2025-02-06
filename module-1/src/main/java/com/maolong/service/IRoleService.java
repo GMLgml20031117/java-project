@@ -10,4 +10,6 @@ import com.maolong.pojo.entity.Role;
 public interface IRoleService extends IService<Role> {
     PageResult<Role> getRolesByConditions(RoleDTO roleDTO);
     boolean saveOrUpdate(Role role);
+
+    void deleteByIds(String ids);
 }

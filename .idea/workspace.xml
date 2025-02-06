@@ -4,27 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="完成了菜单管理模块">
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/FindFailException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/serializer/StringListDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/util/StringToListUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/util/TreeDataUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/RoleRightController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/RoleRightMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/TestMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/RoleRightDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/RoleRightService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RoleRightServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/resources/mapper/RoleRightMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/test/java/com/maolong/TestBoolean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/test/java/com/maolong/TestTreeData.java" afterDir="false" />
+    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="补充完成了角色模块的菜单权限功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/BaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/BaseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/MyExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/MyExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/vo/ModuleTreeDataVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/vo/ModuleTreeDataVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/ModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/ModuleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RoleServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,7 +266,7 @@
       <workItem from="1738649580386" duration="5977000" />
       <workItem from="1738660694359" duration="675000" />
       <workItem from="1738672882570" duration="2480000" />
-      <workItem from="1738718635960" duration="23813000" />
+      <workItem from="1738718635960" duration="24918000" />
     </task>
     <task id="LOCAL-00001" summary="完成jwt,下一步，重新配置swagger换位knife">
       <option name="closed" value="true" />
@@ -372,7 +356,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738660720874</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="补充完成了角色模块的菜单权限功能">
+      <option name="closed" value="true" />
+      <created>1738776630938</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1738776630938</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +379,8 @@
     <MESSAGE value="完成了用户界面，以及部门管理界面" />
     <MESSAGE value="完善了knife4j的文档" />
     <MESSAGE value="完成了菜单管理模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了菜单管理模块" />
+    <MESSAGE value="补充完成了角色模块的菜单权限功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="补充完成了角色模块的菜单权限功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
