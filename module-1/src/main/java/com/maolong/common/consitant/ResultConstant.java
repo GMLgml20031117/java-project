@@ -19,5 +19,8 @@ public class ResultConstant {
     public static final String USER_PASSWORD="123456";
     public static final String IS_LOCK="is_lock";
 
+    //redis存储token的key
+    public static final String REDIS_TOKEN_KEY="token";
+
 
 }

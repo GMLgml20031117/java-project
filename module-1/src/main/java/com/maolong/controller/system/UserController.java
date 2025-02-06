@@ -21,6 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +29,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @RestController
@@ -41,6 +43,8 @@ public class UserController {
     private JwtProperties jwtProperties;
     @Autowired
     private IDeptService iDeptService;
+    @Autowired
+    RedisTemplate redisTemplate;
 
 
     @ApiOperation(value = "登录验证")
@@ -57,8 +61,14 @@ public class UserController {
             //将用户id和用户名放进jwt中的paylaod载体种
             claims.put(ResultConstant.USER_ID, userResult.getId());
             claims.put(ResultConstant.USER_NAME, userResult.getUserName());
+            //生成了jwt
             String jwt = JwtUtil.createJWT(jwtProperties.getAdminSecretKey(), jwtProperties.getAdminTtl(), claims);
             log.info("生成的token是{}",jwt);
+
+            //将token存入redis中
+            //key:token，value:userResult内容
+            redisTemplate.opsForValue().set(ResultConstant.REDIS_TOKEN_KEY,userResult,jwtProperties.getAdminTtl(),TimeUnit.MILLISECONDS);
+
             return LoginResult.success(userResult,jwt);
         } else
             return LoginResult.error(LoginMessage.LOGIN_FAIL);
