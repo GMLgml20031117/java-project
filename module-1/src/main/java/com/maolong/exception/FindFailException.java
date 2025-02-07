@@ -1,4 +1,4 @@
-package com.maolong.common.exception;
+package com.maolong.exception;
 
 public class FindFailException extends BaseException{
     public FindFailException(String message) {

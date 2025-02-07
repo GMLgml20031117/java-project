@@ -1,4 +1,4 @@
-package com.maolong.common.exception;
+package com.maolong.exception;
 
 
 import lombok.Data;

@@ -1,19 +1,16 @@
 package com.maolong.service.impl;
 
-import com.maolong.common.exception.FindFailException;
 import com.maolong.mapper.ModuleMapper;
 import com.maolong.mapper.RoleRightMapper;
 import com.maolong.pojo.dto.RoleRightDTO;
 import com.maolong.pojo.entity.Module;
 import com.maolong.pojo.vo.ModuleTreeDataVO;
-import com.maolong.service.ModuleService;
 import com.maolong.service.RoleRightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Service

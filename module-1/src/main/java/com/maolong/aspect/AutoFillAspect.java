@@ -1,4 +1,4 @@
-package com.maolong.common.aspect;
+package com.maolong.aspect;
 
 import com.maolong.common.annotation.AutoFill;
 import com.maolong.common.consitant.ResultConstant;
