@@ -151,7 +151,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
         roles.forEach(role -> {
             UserRoleVO userRoleVO = new UserRoleVO();
-            userRoleVO.setValue(role.getRoleName());
+            userRoleVO.setValue(role.getRoleId());
             userRoleVO.setLabel(role.getRoleName());
             userRoleVOS.add(userRoleVO);
         });

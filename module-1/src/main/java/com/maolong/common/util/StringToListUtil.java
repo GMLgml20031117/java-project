@@ -9,6 +9,9 @@ import java.util.List;
 public class StringToListUtil {
     public static List<Integer> stringToList(String moduleIdsJson) {
         List<Integer> moduleIds = new ArrayList<>();
+        if(!moduleIdsJson.contains("[")){
+            moduleIdsJson="["+moduleIdsJson+"]";
+        }
         if (moduleIdsJson != null && !moduleIdsJson.isEmpty()) {
             String[] ids = moduleIdsJson.replace("[", "").replace("]", "").split(",");
             for (String id : ids) {

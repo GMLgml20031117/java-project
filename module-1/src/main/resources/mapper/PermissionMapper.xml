@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.maolong.mapper.PermissionMapper">
+
+    <select id="getByConditions" resultType="com.maolong.pojo.entity.Permission">
+        select id as permission_id,permission_name,permission,lay_checked,add_user,add_time,edit_user,edit_time from permission
+        <where>
+            <if test="permissionName != null and permissionName != ''">
+                permission_name like concat('%',#{permissionName},'%')
+            </if>
+            <if test="permission != null and permission != ''">
+                permission like concat('%',#{permission},'%')
+            </if>
+        </where>
+    </select>
+    <select id="getAllPermissionName" resultType="java.lang.String">
+        select permission_name from permission where id in
+        <foreach collection="permissionIds" item="per" open="(" close=")" separator=",">
+            #{per}
+        </foreach>
+    </select>
+    <select id="getAllPermission" resultType="com.maolong.pojo.entity.Permission">
+        select id as permission_id,permission_name,permission,lay_checked,add_user,add_time,edit_user,edit_time from permission where id in
+        <foreach collection="permissionIds" item="per" open="(" close=")" separator=",">
+            #{per}
+        </foreach>
+    </select>
+
+
+</mapper>

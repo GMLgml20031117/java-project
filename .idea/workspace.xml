@@ -4,16 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="修改了一些bug,完成了第11天的任务">
-      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/config/RedisConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module-1/src/test/java/com/maolong/TestRedis.java" afterDir="false" />
+    <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="完成了12天的任务，实现了redis的登录缓存">
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/annotation/AutoFill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/aspect/AutoFillAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/enumClass/OperationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/PermissionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/RolePermissionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/PermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/RolePermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/PermissionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/dto/RolePermissionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/RolePermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/PermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/RolePermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/PermissionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RolePermissionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/resources/mapper/PermissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/resources/mapper/RolePermissionMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/consitant/ResultConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/consitant/ResultConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/util/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/interceptor/JwtTokenInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/interceptor/JwtTokenInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/test/java/com/maolong/TestBoolean.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/test/java/com/maolong/TestBoolean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/Module1Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/Module1Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/util/StringToListUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/util/StringToListUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/RoleRightMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/RoleRightMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/vo/UserRoleVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/vo/UserRoleVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="application.yml" />
+        <option value="AnnotationType" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -91,11 +110,14 @@
     "应用程序.MyGenerate.executor": "Run"
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.maolong.mapper" />
       <recent name="com.maolong.service.impl" />
       <recent name="com.maolong.service" />
+      <recent name="com.maolong.mapper" />
       <recent name="com.maolong.pojo.dto" />
       <recent name="com.maolong.pojo.vo" />
     </key>
@@ -273,7 +295,7 @@
       <workItem from="1738649580386" duration="5977000" />
       <workItem from="1738660694359" duration="675000" />
       <workItem from="1738672882570" duration="2480000" />
-      <workItem from="1738718635960" duration="48880000" />
+      <workItem from="1738718635960" duration="72427000" />
     </task>
     <task id="LOCAL-00001" summary="完成jwt,下一步，重新配置swagger换位knife">
       <option name="closed" value="true" />
@@ -403,7 +425,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738828635146</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="完成了12天的任务，实现了redis的登录缓存">
+      <option name="closed" value="true" />
+      <created>1738842791597</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1738842791597</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,7 +464,8 @@
     <MESSAGE value="完成了第九天的任务，完成了用户部门设置" />
     <MESSAGE value="修改了一些bug，关于用户管理模块的" />
     <MESSAGE value="修改了一些bug,完成了第11天的任务" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改了一些bug,完成了第11天的任务" />
+    <MESSAGE value="完成了12天的任务，实现了redis的登录缓存" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了12天的任务，实现了redis的登录缓存" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

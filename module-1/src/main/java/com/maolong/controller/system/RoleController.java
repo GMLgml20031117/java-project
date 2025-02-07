@@ -7,6 +7,7 @@ import com.maolong.pojo.dto.DeptDTO;
 import com.maolong.pojo.dto.RoleDTO;
 import com.maolong.pojo.entity.Dept;
 import com.maolong.pojo.entity.Role;
+import com.maolong.pojo.vo.UserRoleVO;
 import com.maolong.service.IDeptService;
 import com.maolong.service.IRoleService;
 import io.swagger.annotations.Api;
@@ -15,6 +16,10 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @Slf4j
@@ -44,7 +49,22 @@ public class RoleController {
     public Result delete(@RequestParam String ids){
         log.info("进入了delete方法，{}",ids);
         roleService.deleteByIds(ids);
-        return roleService.removeById(ids)?Result.success():Result.error("删除失败");
+        return Result.success();
+    }
+
+    @ApiOperation("获取所有角色")
+    @GetMapping("/dropDown/all")
+    public Result getAll(){
+        log.info("获取所有角色");
+        List<Role> list = roleService.list();
+        List<UserRoleVO> listVO = list.stream().map(role -> {
+            UserRoleVO userRoleVO = new UserRoleVO();
+            userRoleVO.setLabel(role.getRoleName());
+            userRoleVO.setValue(role.getRoleId());
+            return userRoleVO;
+        }).collect(Collectors.toList());
+
+        return Result.success(listVO);
     }
 
 }

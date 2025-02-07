@@ -1,11 +1,8 @@
 package com.maolong.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.maolong.pojo.dto.RoleRightDTO;
 import com.maolong.pojo.entity.Module;
-import com.maolong.pojo.vo.ModuleTreeDataVO;
 import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

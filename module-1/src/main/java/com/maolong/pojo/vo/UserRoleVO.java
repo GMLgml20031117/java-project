@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class UserRoleVO {
     private String label;
-    private String value;
+    private Integer value;
 }
