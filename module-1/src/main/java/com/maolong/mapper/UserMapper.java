@@ -1,14 +1,12 @@
 package com.maolong.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.github.pagehelper.Page;
 import com.maolong.pojo.dto.LoginDTO;
 import com.maolong.pojo.dto.UserDTO;
 import com.maolong.pojo.entity.User;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-
-import java.util.List;
 
 /**
  * <p>
@@ -29,8 +27,8 @@ public interface UserMapper extends BaseMapper<User> {
     int saveUser(User user);
 
     //重置密码
-    @Update("update user set user_password=#{password} where user_id=#{userId}")
-    int resetPwd(String userId,String password);
+    @Update("update user set user_password=#{password} where id=#{userId}")
+    int resetPwd(Integer userId,String password);
 
 
 }

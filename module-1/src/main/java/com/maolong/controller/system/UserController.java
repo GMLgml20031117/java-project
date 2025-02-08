@@ -1,7 +1,6 @@
 package com.maolong.controller.system;
 
 
-import com.maolong.common.consitant.LoginMessage;
 import com.maolong.common.consitant.ResultConstant;
 import com.maolong.common.properties.JwtProperties;
 import com.maolong.common.result.LoginResult;
@@ -10,14 +9,12 @@ import com.maolong.common.result.Result;
 import com.maolong.common.util.JwtUtil;
 import com.maolong.pojo.dto.LoginDTO;
 import com.maolong.pojo.dto.UserDTO;
-import com.maolong.pojo.entity.Dept;
 import com.maolong.pojo.entity.User;
 import com.maolong.pojo.vo.DeptVO;
 import com.maolong.pojo.vo.UserRoleVO;
 import com.maolong.service.IDeptService;
 import com.maolong.service.IUserService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +22,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,35 +46,29 @@ public class UserController {
     @ApiOperation(value = "登录验证")
     @PostMapping("/login")
     public LoginResult user(@RequestBody LoginDTO user) {
-        log.info("进行用户登录,用户信息：{}", user);
         //使用md5加密算法,先将密码加密，然后与数据库中的密码做对比
         String decodePassword = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
         user.setPassword(decodePassword);
         User userResult = userService.login(user);
 
-        if (userResult != null) {
-            HashMap<String, Object> claims = new HashMap<>();
-            //将用户id和用户名放进jwt中的paylaod载体种
-            claims.put(ResultConstant.USER_ID, userResult.getId());
-            claims.put(ResultConstant.USER_NAME, userResult.getUserName());
-            //生成了jwt
-            String jwt = JwtUtil.createJWT(jwtProperties.getAdminSecretKey(), jwtProperties.getAdminTtl(), claims);
-            log.info("生成的token是{}",jwt);
+        HashMap<String, Object> claims = new HashMap<>();
+        //将用户id和用户名放进jwt中的paylaod载体种
+        claims.put(ResultConstant.USER_ID, userResult.getId());
+        claims.put(ResultConstant.USER_NAME, userResult.getUserName());
+        //生成了jwt
+        String jwt = JwtUtil.createJWT(jwtProperties.getAdminSecretKey(), jwtProperties.getAdminTtl(), claims);
+        log.info("生成的token是{}",jwt);
+        //将token存入redis中
+        //key:token，value:userResult内容
+        redisTemplate.opsForValue().set(ResultConstant.REDIS_TOKEN_KEY,userResult,jwtProperties.getAdminTtl(),TimeUnit.MILLISECONDS);
+        return LoginResult.success(userResult,jwt);
 
-            //将token存入redis中
-            //key:token，value:userResult内容
-            redisTemplate.opsForValue().set(ResultConstant.REDIS_TOKEN_KEY,userResult,jwtProperties.getAdminTtl(),TimeUnit.MILLISECONDS);
-
-            return LoginResult.success(userResult,jwt);
-        } else
-            return LoginResult.error(LoginMessage.LOGIN_FAIL);
     }
 
 
     @ApiOperation("查询用户")
     @PostMapping("/list")
     public Result query(@RequestBody UserDTO userDTO){
-        log.info("查询信息:{}",userDTO);
 
         PageResult<User> usersByConditions = userService.getUsersByConditions(userDTO);
 
@@ -95,16 +85,14 @@ public class UserController {
     @ApiOperation("保存编辑用户")
     @PostMapping("/save")
     public Result save(@RequestBody UserDTO userDTO){
-        log.info("待保存用户信息:{}",userDTO);
-        boolean b = userService.saveUser(userDTO);
-        return b?Result.success():Result.error("保存失败");
+        userService.saveUser(userDTO);
+        return Result.success();
 
     }
 
     @ApiOperation("删除用户")
     @DeleteMapping("/delete")
     public Result delete(Integer ids){
-        log.info("待删除用户id:{}",ids);
         return userService.removeById(ids)?Result.success():Result.error("删除失败");
 
     }
@@ -112,16 +100,16 @@ public class UserController {
     @ApiOperation("重置密码")
     @PostMapping("/pwd")
     public Result resetPwd(@RequestBody Map<String,Object>map){
-        log.info("待重置密码用户userId:{}",map.get("userId"));
-        String userId = (String) map.get("userId");
-        return userService.resetPwd(userId)?Result.success():Result.error("重置密码失败");
+        Integer userId = (Integer) map.get("id");
+        userService.resetPwd(userId);
+        return Result.success();
     }
 
     @ApiOperation("修改状态")
     @GetMapping("/lock")
     public Result lock(String userId,String lock){
-        log.info("待修改状态用户id:{},状态:{}",userId,lock);
-        return userService.lock(userId,lock)?Result.success():Result.error("修改状态失败");
+        userService.lock(userId,lock);
+        return Result.success();
     }
 
     @ApiOperation("获取用户角色")

@@ -8,16 +8,12 @@ import com.maolong.pojo.dto.RolePermissionDTO;
 import com.maolong.pojo.entity.Permission;
 import com.maolong.pojo.entity.Role;
 import com.maolong.pojo.entity.RolePermission;
-import com.maolong.service.IRoleService;
-import com.maolong.service.PermissionService;
 import com.maolong.service.RolePermissionService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -52,7 +48,6 @@ public class RolePermissionServiceImpl implements RolePermissionService {
                     .build();
             rolePermissions.add(rolePer);
         });
-        System.out.println(allPermission);
 
         rolePermissionMapper.insertBatch(rolePermissions);
 

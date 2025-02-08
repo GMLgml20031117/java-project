@@ -32,10 +32,19 @@ mybatis-plus:
 
 
 #将数据库的日志信息控制级别
+
+
+logdir: E:\java\project\Java-Project\module-1\log\
 logging:
   level:
     com.maolong.mapper: debug
+  logback:
+    rollingpolicy:
+      max-file-size: 1MB
+      file-name-pattern: ${logdir}gml-%d{yyyy-MM-dd}-%i.log
 
+  file:
+    name: ${logdir}gaomaolong.log
 
 
 project:

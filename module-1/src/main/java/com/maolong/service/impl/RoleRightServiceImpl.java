@@ -24,14 +24,8 @@ public class RoleRightServiceImpl implements RoleRightService {
     public List<ModuleTreeDataVO> getData(Integer id) {
         //查出来user对应的moduleIds
         List<Integer> moduleIds = roleRightMapper.listByRoleId(id);
-//        if (moduleIds == null || moduleIds.isEmpty()) {
-////            throw new FindFailException("数据不存在");
-//        }else {
+
             List<ModuleTreeDataVO> treeData = new ArrayList<>();
-            //查出来用户拥有的modules
-            //似乎不太需要，只需要查询全部的，然后把上面user对应的moduleId设为true
-//            List<Module> modules = roleRightMapper.listByModuleIds(moduleIds);
-            //查出来全部的modules
             List<Module> modules = moduleMapper.selectList(null);
 
 

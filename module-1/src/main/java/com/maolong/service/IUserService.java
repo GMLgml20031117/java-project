@@ -29,11 +29,11 @@ public interface IUserService extends IService<User> {
    /**
     * 实现保存功能
     */
-   public boolean saveUser(UserDTO userDTO);
+   public void saveUser(UserDTO userDTO);
 
-   boolean resetPwd(String userId);
+   void resetPwd(Integer userId);
 
-   boolean lock(String userId, String lock);
+   void lock(String userId, String lock);
 
    List<UserRoleVO> getRoles();
 }

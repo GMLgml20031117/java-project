@@ -5,17 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98f88aca-a2bf-44d3-adb3-daf36d7ece01" name="更改" comment="完成了权限管理系统的任务">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/log/gaomaolong.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/aspect/DBLogAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/aspect/WebLogAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/consitant/ExceptionMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/exception/LoginFailException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/exception/SaveFailException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/LogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/DBLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/pojo/entity/WebLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/aspect/AutoFillAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/aspect/AutoFillAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/BaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/exception/BaseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/FindFailException.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/exception/FindFailException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/exception/MyExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/exception/MyExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/generate/MyGenerate.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/generate/MyGenerate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/consitant/LoginMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/common/handler/MyMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/handler/MyMetaObjectHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/controller/system/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/exception/MyExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/handler/MyExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/ModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/ModuleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/PermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/PermissionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RolePermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RolePermissionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RoleRightServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/RoleRightServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-1/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/module-1/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +98,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/project-Github&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/java/project/Java-Project&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -105,9 +118,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.maolong.mapper" />
       <recent name="com.maolong.service.impl" />
       <recent name="com.maolong.service" />
-      <recent name="com.maolong.mapper" />
       <recent name="com.maolong.pojo.dto" />
       <recent name="com.maolong.pojo.vo" />
     </key>
@@ -122,6 +135,7 @@
       <recent name="E:\java\project\Java-Project\module-1\src\main\resources\mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.maolong.exception" />
       <recent name="com.maolong" />
       <recent name="com.maolong.config" />
       <recent name="com.maolong.service" />
@@ -302,6 +316,8 @@
       <workItem from="1738660694359" duration="675000" />
       <workItem from="1738672882570" duration="2480000" />
       <workItem from="1738718635960" duration="76808000" />
+      <workItem from="1738931467489" duration="488000" />
+      <workItem from="1738931989833" duration="14149000" />
     </task>
     <task id="LOCAL-00001" summary="完成jwt,下一步，重新配置swagger换位knife">
       <option name="closed" value="true" />
@@ -447,7 +463,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738926691923</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="完成了权限管理系统的任务">
+      <option name="closed" value="true" />
+      <created>1738931744415</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1738931744415</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,12 +525,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/ModuleServiceImpl.java</url>
-          <line>22</line>
+          <line>23</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/module-1/src/main/java/com/maolong/service/impl/ModuleServiceImpl.java</url>
-          <line>37</line>
+          <line>38</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>

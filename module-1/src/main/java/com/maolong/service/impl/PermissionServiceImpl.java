@@ -34,10 +34,7 @@ public class PermissionServiceImpl implements PermissionService {
     public PageResult listByConditions(PermissionDTO permissionDTO) {
         PageHelper.startPage(permissionDTO.getPage(),permissionDTO.getLimit());
 
-
         Page<Permission> byConditions = permissionMapper.getByConditions(permissionDTO);
-
-        System.out.println(byConditions.getResult());
 
         return new PageResult(byConditions.getResult(),byConditions.size());
     }

@@ -11,8 +11,9 @@ import com.maolong.service.ModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 @Service
 public class ModuleServiceImpl extends ServiceImpl<ModuleMapper,Module> implements ModuleService {
@@ -57,6 +58,11 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper,Module> implemen
         return treeData;
     }
 
+    /**
+     * 获取下拉框的父节点数据
+     * @param id
+     * @return
+     */
     @Override
     public Module getNodeData(Integer id) {
         Module module = moduleMapper.selectOne(new QueryWrapper<Module>().eq("module_id", id));

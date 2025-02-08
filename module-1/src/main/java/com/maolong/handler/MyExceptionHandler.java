@@ -1,5 +1,6 @@
-package com.maolong.exception;
+package com.maolong.handler;
 import com.maolong.common.result.Result;
+import com.maolong.exception.BaseException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

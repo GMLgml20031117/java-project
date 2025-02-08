@@ -2,20 +2,22 @@ package com.maolong.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.fasterxml.jackson.databind.util.BeanUtil;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.maolong.common.consitant.ExceptionMessage;
 import com.maolong.common.consitant.ResultConstant;
 import com.maolong.common.result.PageResult;
+import com.maolong.exception.FindFailException;
+import com.maolong.exception.SaveFailException;
 import com.maolong.mapper.RoleMapper;
+import com.maolong.mapper.UserMapper;
 import com.maolong.pojo.dto.LoginDTO;
 import com.maolong.pojo.dto.UserDTO;
 import com.maolong.pojo.entity.Role;
 import com.maolong.pojo.entity.User;
-import com.maolong.mapper.UserMapper;
 import com.maolong.pojo.vo.UserRoleVO;
 import com.maolong.service.IUserService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 import org.springframework.beans.BeanUtils;
@@ -25,7 +27,6 @@ import org.springframework.util.DigestUtils;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -52,7 +53,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      */
     @Override
     public User login(LoginDTO user) {
-        return userMapper.getByNameAndPasswordUser(user);
+        User byNameAndPasswordUser = userMapper.getByNameAndPasswordUser(user);
+        if (byNameAndPasswordUser == null) {
+            //抛出异常
+            throw new FindFailException(ExceptionMessage.USER_PASSWORD_ERROR);
+        }else
+            return byNameAndPasswordUser;
     }
 
     /**
@@ -65,7 +71,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         PageHelper.startPage(userDTO.getPage(),userDTO.getLimit());
         Page<User> usersByConditions = userMapper.getUsersByConditions(userDTO);
         if (usersByConditions == null) {
-            return new PageResult<>(Collections.emptyList(),0);
+            throw new FindFailException(ExceptionMessage.FIND_ERROR);
         }else
             return new PageResult<>(usersByConditions.getResult(),usersByConditions.size());
     }
@@ -74,7 +80,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      * 通过先通过用户id查询是否存在，不存在的话，则新增，存在的话，则更新
      */
     @Override
-    public boolean saveUser(UserDTO userDTO) {
+    public void saveUser(UserDTO userDTO) {
         User user = new User();
         BeanUtils.copyProperties(userDTO,user);
 
@@ -82,11 +88,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         User ifUser = userMapper.selectOne(new QueryWrapper<User>().eq(ResultConstant.ID, user.getId()));
         if (ifUser == null) {
             user = userDefault(user);
-            System.out.println(user);
-            return userMapper.insert(user)>0?true:false;
+            if(userMapper.insert(user)==0){
+                throw new SaveFailException(ExceptionMessage.SAVE_ERROR);
+            }
         }else{
             user = userEditDefault(user);
-            return userMapper.update(user,new UpdateWrapper<User>().eq(ResultConstant.ID,user.getId()))>0?true:false;//直接使用了mybatis-plus中的东西
+            if(userMapper.update(user,new UpdateWrapper<User>().eq(ResultConstant.ID,user.getId()))==0){
+                throw new SaveFailException(ExceptionMessage.SAVE_ERROR);
+            }
         }
     }
 
@@ -96,19 +105,24 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      * @return
      */
     @Override
-    public boolean resetPwd(String userId) {
-        return userMapper.resetPwd(userId,userDefault(new User()).getUserPassword())>0?true:false;
+    public void resetPwd(Integer userId) {
+        if(userMapper.resetPwd(userId,userDefault(new User()).getUserPassword())==0){
+            throw new SaveFailException(ExceptionMessage.SAVE_ERROR);
+        }
     }
 
     @Override
-    public boolean lock(String userId, String lock) {
+    public void lock(String userId, String lock) {
         UpdateWrapper<User> userUpdateWrapper = new UpdateWrapper<>();
         if (lock.equals("N")){
             userUpdateWrapper.eq(ResultConstant.USER_ID,userId).set(ResultConstant.IS_LOCK,"F");
         }else{
             userUpdateWrapper.eq(ResultConstant.USER_ID,userId).set(ResultConstant.IS_LOCK,"N");
         }
-        return userMapper.update(null,userUpdateWrapper)>0?true:false;
+
+        if(userMapper.update(null,userUpdateWrapper)==0){
+            throw new SaveFailException(ExceptionMessage.SAVE_ERROR);
+        }
 
     }
 
@@ -155,6 +169,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             userRoleVO.setLabel(role.getRoleName());
             userRoleVOS.add(userRoleVO);
         });
+
+        if((userRoleVOS==null)||(userRoleVOS.size()==0)){
+            throw new FindFailException(ExceptionMessage.FIND_ERROR);
+        }
         return userRoleVOS;
     }
 
